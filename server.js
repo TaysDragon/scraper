@@ -29,9 +29,14 @@ app.use(bodyParser.urlencoded({
 // Make public a static dir
 app.use(express.static("public"));
 
-// Database configuration with mongoose
-mongoose.connect("mongodb://localhost/scrap3r");
+// Database configuration with mongoose for home
+// mongoose.connect("mongodb://localhost/scrap3r");
+// var db = mongoose.connection;
+
+// Database configuration with mongoose for heroku
+mongoose.connect("mongodb://heroku_65b6lxk7:eidd74jsap75r17j6puu3v1hhi@ds157677.mlab.com:57677/heroku_65b6lxk7");
 var db = mongoose.connection;
+
 
 // Show any mongoose errors
 db.on("error", function(error) {
